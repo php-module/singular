@@ -60,7 +60,7 @@ namespace Sammy\Packs\Singular {
     /**
      * @method string parse
      */
-    public final function parse ($str = null) {
+    public function parse ($str = null) {
       if (!is_string ($str) && $str) {
         return;
       }
@@ -78,7 +78,7 @@ namespace Sammy\Packs\Singular {
       return preg_replace ('/s$/i', '', $str );
     }
 
-    public final function __invoke () {
+    public function __invoke () {
       return call_user_func_array ([$this, 'parse'], func_get_args ());
     }
   }}
